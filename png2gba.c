@@ -487,13 +487,13 @@ void png2gba(FILE *in, FILE *out, FILE *palette_out, char *name, struct argument
     if (palette)
     {
         include_header =
-            malloc(strlen("#include \"palette_%s\"\n#include \"lib/libtonc.hpp\"\n\n") + strlen(output_file_name) + 1);
-        sprintf(include_header, "#include \"palette_%s\"\n#include \"lib/libtonc.hpp\"\n\n", output_file_name);
+            malloc(strlen("#include \"palette_%s\"\n#include \"libtonc/include/tonc_types.hpp\"\n\n") + strlen(output_file_name) + 1);
+        sprintf(include_header, "#include \"palette_%s\"\n#include \"libtonc/include/tonc_types.hpp\"\n\n", output_file_name);
     }
     else
     {
-        include_header = malloc(strlen("#include \"lib/libtonc.hpp\"\n\n") + 1);
-        strcpy(include_header, "#include \"lib/libtonc.hpp\"\n\n");
+        include_header = malloc(strlen("#include \"libtonc/include/tonc_types.hpp\"\n\n") + 1);
+        strcpy(include_header, "#include \"libtonc/include/tonc_types.hpp\"\n\n");
     }
 
     if (strcmp(output_file_name, previous_output_file_name))
